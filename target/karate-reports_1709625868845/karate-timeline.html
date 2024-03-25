@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Karate Timeline</title>
+    <style>
+        body, html { font-family: arial, sans-serif; font-size: 11pt; }
+        #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+        .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="visualization"></div>
+<script>
+    var groups = [{"content":"main","id":1}];
+    var items = [{"id":1,"group":1,"content":"src\/main\/java\/KarateFramework\/FrameworkAssignment\/Test[1:7]","start":1709625342692,"end":1709625344560,"title":"src\/main\/java\/KarateFramework\/FrameworkAssignment\/Test[1:7] 13:25:42.692-13:25:44.560 create and retrieve a user name"},{"id":2,"group":1,"content":"src\/main\/java\/KarateFramework\/FrameworkAssignment\/Test[2:89]","start":1709625344575,"end":1709625344776,"title":"src\/main\/java\/KarateFramework\/FrameworkAssignment\/Test[2:89] 13:25:44.575-13:25:44.776 get and retrieve a user name"},{"id":3,"group":1,"content":"src\/main\/java\/KarateFramework\/FrameworkAssignment\/Test[3:171]","start":1709625344800,"end":1709625345271,"title":"src\/main\/java\/KarateFramework\/FrameworkAssignment\/Test[3:171] 13:25:44.800-13:25:45.271 put and retrieve a user name"},{"id":4,"group":1,"content":"src\/main\/java\/KarateFramework\/FrameworkAssignment\/Test[4:251]","start":1709625345288,"end":1709625345762,"title":"src\/main\/java\/KarateFramework\/FrameworkAssignment\/Test[4:251] 13:25:45.288-13:25:45.762 Patch and retrieve a user name"},{"id":5,"group":1,"content":"src\/main\/java\/KarateFramework\/FrameworkAssignment\/Test[5:331]","start":1709625345785,"end":1709625346310,"title":"src\/main\/java\/KarateFramework\/FrameworkAssignment\/Test[5:331] 13:25:45.785-13:25:46.310 Delete and retrieve a user name"}];
+</script>
+<script>
+    var container = document.getElementById('visualization');
+    var timeline = new vis.Timeline(container);
+    timeline.setOptions({groupOrder: 'content'});
+    timeline.setGroups(new vis.DataSet(groups));
+    timeline.setItems(new vis.DataSet(items));
+</script>
+</body>
+</html>
